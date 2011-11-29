@@ -1,0 +1,14 @@
+#demo {
+  padding: 10px;
+}
+#demo section {
+  height: auto;
+}
+#demo .demo-item {
+  margin-top: 10px;
+  width: 100%;
+}
+#demo .demo-item article {
+  margin: 0;
+  padding: 10px;
+}

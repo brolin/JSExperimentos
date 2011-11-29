@@ -1,0 +1,22 @@
+{
+  "name": "bugswarm-webui",
+  "description": "BUGswarm is a collection of online services  that allows you to share your data and access your BUGs from the web.",
+  "version": "0.1.0",
+  "homepage": "http://www.bugswarm.net",
+  "author": "BugLabs Inc.",
+  "repository": "git://github.com/buglabs/bugswarm-webui",
+  "engines": {
+    "node": ">= 0.4.3 < 0.5.0"
+  },
+  "dependencies": {
+    "express": "2.4.7",
+    "mongoose": "2.3.3",
+    "cluster": "0.6.4",
+    "cluster.exception": "0.0.1",
+    "socket.io": "0.8.4",
+    "connect-form": "0.2.1",
+    "jade": "0.13.0",
+    "stylus": "0.13.6",
+    "superagent":"0.1.2"
+  }
+}
