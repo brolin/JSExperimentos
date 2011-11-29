@@ -49,24 +49,10 @@ function getFlash(req) {
     return flash.length > 0 ? flash.shift() : null;
 }
 
-app.get('/', function(req, res){
-    if(req.session && req.session.user) {
-	res.redirect('/'+req.session.user);
-    } else {
-	res.render('index', {
-	    locals: {
-		user: null,
-		flash: getFlash(req)
-	    },
-	    layout: 'layouts/home'
-	});
-    }
-});
-
 try {
     // Order is important here!
     // Make sure AccountService is topmost
-    require('./lib/service')(app);
+    require('./lib/timeline/service')(app);
 } catch(e) {
     console.log(JSON.stringify(e));
     // email error
