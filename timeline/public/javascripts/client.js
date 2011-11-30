@@ -17,8 +17,20 @@ $.widget("ui.Timeline", {
     }
 });
 
+$.widget("ui.Control", {
+    _init: function() {
+	var $el= this.element;
+	$el.draggable({
+	    containment: 'parent',
+	    drag: function(e, ui) {
+		$(".timelines-list").scrollLeft(ui.position.left);
+	    }
+	});
+    }
+});
 
 
 $(function() {
     $(".timelines-list").Timeline();
+    $(".span-control").Control();
 });
