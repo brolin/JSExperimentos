@@ -1,26 +1,21 @@
-!!! 5
-html(lang="en")
-  head
-    title Timeline
-  
-    meta(name="description", content="")
-    meta(name="author", content="Timeline")
-  
-    link(rel="stylesheet", href="/styles.css")
+header
+  p.title La Timeline
 
-  body
-    p hola
-    // jQuery
-    script(src="/javascripts/thirdparty/jquery.js", type="text/javascript")
+.timelines-list
+  ul
+    li.timeline-item.layout(style="display:none;")
+      p.name Nombre
 
-    // jQuery UI
-    script(src="/javascripts/thirdparty/jquery-ui/jquery.ui.core.min.js", type="text/javascript")
-    script(src="/javascripts/thirdparty/jquery-ui/jquery.ui.widget.min.js", type="text/javascript")
-    script(src="/javascripts/thirdparty/jquery-ui/jquery.ui.position.min.js", type="text/javascript")
-    script(src="/javascripts/thirdparty/jquery-ui/jquery.ui.mouse.min.js", type="text/javascript")
-
-    // jQuery TipTip
-    // http://code.drewwilson.com/entry/tiptip-jquery-plugin
-    script(src="/javascripts/thirdparty/jquery.tipTip.minified.js", type="text/javascript")
-
-    script(src="/javascripts/client.js", type="text/javascript")
+.timelines-control
+  .years-list
+    ul
+      li.year-item
+        p 1900
+      li.year-item
+        p 1920
+      li.year-item
+        p 1940
+      li.year-item
+        p 1960
+      li.year-item
+        p 1980

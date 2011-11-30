@@ -18,7 +18,6 @@ function compile(str, path) {
 app.configure(function(){
     this.set('views', __dirname + '/views');
     this.set('view engine', 'jade');
-    this.set('view options', { layout: 'layouts/application' })
     this.use(express.bodyParser());
     this.use(express.logger());
     this.use(express.methodOverride());

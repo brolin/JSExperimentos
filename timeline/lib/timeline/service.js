@@ -2,8 +2,7 @@ function TimelineService(app) {
     app.get('/', function(req,res) {
 	res.render('home', {
 	    locals: {
-	    },
-	    layout: false
+	    }
 	});
     });
 
