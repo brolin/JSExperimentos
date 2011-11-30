@@ -1,0 +1,121 @@
+////////////////////////////////////////////////
+//                   UTILS    
+////////////////////////////////////////////////
+
+corner-each(tl, tr, br, bl)
+  -moz-border-radius-topleft tl
+  -webkit-border-top-left-radius tl
+  -moz-border-radius-topright tr
+  -webkit-border-top-right-radius tr
+  -moz-border-radius-bottomleft bl
+  -webkit-border-bottom-left-radius bl
+  -moz-border-radius-bottomright br
+  -webkit-border-bottom-right-radius br
+
+corner(px)
+  corner-each(px,px,px,px)
+
+corner-top(px)
+  corner-each(px,px,0,0)
+
+corner-bottom(px)
+  corner-each(0,0,px,px)
+
+corner-left(px)
+  corner-each(px,0,0,px)
+
+corner-right(px)
+  corner-each(0,px,px,0)
+////////////////////////////////////////////////
+
+/* Reset
+Based on http://meyerweb.com/eric/thoughts/2008/01/15/resetting-again/
+Removed elements not supported in HTML5
+-----------------------------------------------------------------------------*/
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strike, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td
+  margin 0
+  padding 0
+  border 0
+  outline 0
+  font-size 100%
+  vertical-align baseline
+
+/*
+Trigger the new block level elements in to the correct content flow
+-----------------------------------------------------------------------------*/
+article, aside, dialog, figure,
+footer, header, hgroup, menu,
+nav, section, li
+  display block
+
+/* Set up document
+-----------------------------------------------------------------------------*/
+body
+  font 62.5%/1.5  Helvetica, Arial, "Lucida Grande", "Lucida Sans", Tahoma, Verdana, sans-serif
+
+body
+  margin: 0
+  height: 100%
+
+.item-1
+  background-color: #22BEBE
+  .name
+    background-color: #22BEBE
+
+.item-2
+  background-color: #BE4815
+  .name
+    background-color: #BE4815
+
+header
+  height: 5%
+  float: left
+  width: 100%
+  background-color: #666
+  color: white
+  position: absolute
+  top: 0
+
+.timelines-list
+  position: absolute
+  top: 5%
+  width: 100%
+  overflow: auto
+  height: 85%
+  ul
+    margin: 0
+    padding: 0
+    height: 30%
+  .timeline-item
+    display: block
+    border: 1px solid #AAA
+    padding: 20px
+    width: 3000px
+    p.name
+      font-size: 12px
+      padding: 3px 10px
+      width: 15%
+      corner(4px)
+      color: white
+
+.timelines-control
+  position: absolute
+  bottom: 0px
+  width: 100%
+  height: 10%
+  background-color: #666
+  ul
+    float: left
+    color: white
+    width: 100%
+  li
+    float: left
+    padding: 10px
