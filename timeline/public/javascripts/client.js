@@ -14,10 +14,11 @@ $.widget("ui.Timeline", {
 		// Tengo que poner una serie de elementos <p> que correspondan con cada elemento de los antecedentes t.anio???</p>
 		$layout.addClass("item-"+count);
 		$(".timelines-list ul").append($layout.show());
-		t.anio.forEach(function(y) { //Add todos los <p>s par, solo está poniendo el último
+		t.anio.forEach(function(y,cnt) { 
 		    var $evento= $("li.timeline-item.item-"+count);
-		    // console.log($evento.find(".event"));
-		    $evento.append("<p class=\"event\">"+y+"</p>");
+		    console.log("Antecende: "+cnt+" "+t.antecedentes[cnt]);
+		    $evento.append("<p class=\"event\">"+y+"<br>"+t.antecedentes[cnt]+"</p>");
+		    // Problemas con el width (Límite 6000px -> Pillar interactivos.marginalia)
 		});
 	    });
 	});

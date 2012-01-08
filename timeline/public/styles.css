@@ -116,7 +116,7 @@ body {
   background-color: #22bebe;
 }
 header {
-  height: 5%;
+  height: 3%;
   float: left;
   width: 100%;
   background-color: #666;
@@ -129,7 +129,7 @@ header {
   top: 5%;
   width: 100%;
   overflow: hidden;
-  height: 85%;
+  height: 94%;
 }
 .timelines-list ul {
   margin: 0;
@@ -139,8 +139,8 @@ header {
 .timelines-list .timeline-item {
   display: block;
   border: 1px solid #aaa;
-  padding: 20px;
-  width: 3000px;
+  padding: 15px;
+  width: 15000px;
 }
 .timelines-list .timeline-item p.name {
   font-size: 12px;
@@ -157,7 +157,15 @@ header {
   color: #fff;
 }
 .timelines-list .timeline-item p.event {
-  display: inline;
+  display: inline-table;
+  -moz-border-radius-topleft: 4px;
+  -webkit-border-top-left-radius: 4px;
+  -moz-border-radius-topright: 4px;
+  -webkit-border-top-right-radius: 4px;
+  -moz-border-radius-bottomleft: 4px;
+  -webkit-border-bottom-left-radius: 4px;
+  -moz-border-radius-bottomright: 4px;
+  -webkit-border-bottom-right-radius: 4px;
   margin: 3px;
   padding: 5px;
   background-color: PaleTurquoise;
@@ -166,7 +174,7 @@ header {
   position: absolute;
   bottom: 0px;
   width: 100%;
-  height: 10%;
+  height: 3%;
   background-color: #666;
 }
 .timelines-control ul {
