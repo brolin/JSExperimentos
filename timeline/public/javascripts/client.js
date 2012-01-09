@@ -16,8 +16,8 @@ $.widget("ui.Timeline", {
 		$(".timelines-list ul").append($layout.show());
 		t.anio.forEach(function(y,cnt) { 
 		    var $evento= $("li.timeline-item.item-"+count);
-		    console.log("Antecende: "+cnt+" "+t.antecedentes[cnt]);
-		    $evento.append("<p class=\"event\">"+y+"<br>"+t.antecedentes[cnt]+"</p>");
+		    // console.log("Antecende: "+cnt+" "+t.antecedentes[cnt]);
+		    $evento.append("<p class=\"event\" id=\"box-"+count+"-"+cnt+"\">"+y+"<br>"+t.antecedentes[cnt]+"</p>");
 		    // Problemas con el width (Límite 6000px -> Pillar interactivos.marginalia)
 		});
 	    });
@@ -31,14 +31,33 @@ $.widget("ui.Control", {
 	$el.draggable({
 	    containment: 'parent',
 	    drag: function(e, ui) {
-		$(".timelines-list").scrollLeft(ui.position.left);
+		$(".timelines-list").scrollLeft(ui.position.left*6.1);
 	    }
 	});
     }
 });
 
+$.widget("ui.DialogBox",{
+    _init: function() {
+	this._setDialog();
+    },
+    _setDialog: function(){
+	var $el= this.element;
+	console.log($el);
+	$el.dialog();
+    }
+});
 
 $(function() {
     $(".timelines-list").Timeline();
     $(".span-control").Control();
+    $(".event").each(function(i,e){
+//	e.DialogBox();
+	//console.log(e);
+    });
+    console.log($(".event"));
+    $(".event").on("click",function(e){
+	console.log("hola");
+    });
+
 });
