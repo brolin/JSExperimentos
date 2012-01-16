@@ -1,3 +1,4 @@
+//console.profile();
 $.widget("ui.Timeline", {
     _init: function() {
 	this._getTimelines();
@@ -43,7 +44,6 @@ $.widget("ui.DialogBox",{
     },
     _setDialog: function(){
 	var $el= this.element;
-	console.log($el);
 	$el.dialog();
     }
 });
@@ -51,13 +51,10 @@ $.widget("ui.DialogBox",{
 $(function() {
     $(".timelines-list").Timeline();
     $(".span-control").Control();
-    $(".event").each(function(i,e){
-//	e.DialogBox();
-	//console.log(e);
-    });
-    console.log($(".event"));
-    $(".event").on("click",function(e){
-	console.log("hola");
-    });
+    $(".event").DialogBox(); // No me carga todos los elementos con la clase event| Está cargando solo el primero
+});
+
+$(window).load(function(){
 
 });
+//console.profileEnd();
