@@ -156,6 +156,7 @@ header {
   color: #fff;
 }
 .timelines-list .timeline-item p.event {
+  box-shadow: 0px 0px 6px #505050;
   display: inline-table;
   -moz-border-radius-topleft: 4px;
   -webkit-border-top-left-radius: 4px;
