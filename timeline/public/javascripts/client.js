@@ -51,10 +51,21 @@ $.widget("ui.DialogBox",{
 $(function() {
     $(".timelines-list").Timeline();
     $(".span-control").Control();
-    $(".event").DialogBox(); // No me carga todos los elementos con la clase event| Está cargando solo el primero
+  
+    var $dialog = $('<div></div>')
+	.html('This dialog will show every time!')
+	.dialog({
+	    autoOpen: false,
+	    title: 'Basic Dialog'
+	});
+//No ha cargado todos los eventos 
+    $('.event').click(function() {
+	$dialog.dialog('open');
+	// prevent the default action, e.g., following a link
+	return false;
+    });
+    
+//    $(".event").DialogBox(); // No me carga todos los elementos con la clase event| Está cargando solo el primero
 });
 
-$(window).load(function(){
-
-});
 //console.profileEnd();
