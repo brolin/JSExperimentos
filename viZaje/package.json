@@ -1,0 +1,20 @@
+{
+    "name": "unloquerviz",
+    "description": "Visualización Lista Correo de Unloquer",
+    "version": "0.0.1",
+    "homepage": "http://unloquer.org",
+    "author": "Unloquer",
+    "repository": "git://github.com/unloquer/unloquerviz",
+    "engines": {
+        "node": ">= 0.4.3 < 0.5.0"
+    },
+    "dependencies": {
+        "xml2json": "0.2.4",
+        "express": "2.4.7",
+        "mongoose": "2.5.10",
+        "node-xmpp": "0.2.10",
+        "node-stringprep": "0.0.5",
+        "jquery": "1.5.1"
+    }
+}
+
