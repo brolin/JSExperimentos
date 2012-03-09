@@ -1,0 +1,16 @@
+{
+  "name": "viZaje",
+  "description": "Visualizacion Lista Un/loquer",
+  "version": "0.0.1",
+  "homepage": "http://unloquer.org",
+  "author": "Unloquer",
+  "repository": "",
+  "engines": {
+    "node": ">= 0.4.3 < 0.5.0"
+  },
+  "dependencies": {
+    "express": "2.5.8",
+    "jade": "0.20.3",
+    "stylus": "0.24.0"
+  }
+}

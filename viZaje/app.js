@@ -31,7 +31,7 @@ function transform(email) {
     var date= function() {
 	var day= email.received.date.match(/(\d{4})(\d{2})(\d{2})/);
 	var time= email.received.time.split(':');
-	return new Date(day[1],day[2],day[3],time[0],time[1],time[2]);
+	return new Date(day[1],day[2]-1,day[3],time[0],time[1],time[2]);
     }();
 
     try {
