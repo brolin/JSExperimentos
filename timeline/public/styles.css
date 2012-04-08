@@ -125,7 +125,7 @@ header {
   top: 0;
 }
 .timelines-list {
-  position: absolute;
+  position: relative;
   top: 5%;
   width: 100%;
   overflow: hidden;
@@ -155,7 +155,7 @@ header {
   -webkit-border-bottom-right-radius: 4px;
   color: #fff;
 }
-.timelines-list .timeline-item p.event {
+.timelines-list .timeline-item div.event {
   box-shadow: 0px 0px 6px #505050;
   display: inline-table;
   -moz-border-radius-topleft: 4px;

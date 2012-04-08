@@ -5,9 +5,18 @@ $.widget("ui.Timeline", {
     },
     _getTimelines: function() {
 	$.get('/timelines', function(data) {
+/* Estructura de datos en JSON
+   anio
+   antecedentes
+   sintesis
+   Or
+   Ab
+   Oc
+   Dp
+*/
 	    var count= 0;
 	    data.forEach(function(t) {
-		// console.log(t.anio);
+		// console.log(t);
 		count++;
 		var $layout= $(".timeline-item.layout").clone();
 		$layout.removeClass("layout");
@@ -18,7 +27,17 @@ $.widget("ui.Timeline", {
 		t.anio.forEach(function(y,cnt) { 
 		    var $evento= $("li.timeline-item.item-"+count);
 		    // console.log("Antecende: "+cnt+" "+t.antecedentes[cnt]);
-		    $evento.append("<p class=\"event\" id=\"box-"+count+"-"+cnt+"\">"+y+"<br>"+t.antecedentes[cnt]+"</p>");
+// como meter datos escondidos para pasarlos al recuadro cuando hagan click
+		    $evento.append("<div class=\"event\" id=\"box-"
+				   +count+"-"+cnt+"\">"+y+"<br>"
+				   +t.antecedentes[cnt]+"<br>"
+				   +"<span style=\"display: none\"><p class=\"anio\">"+t.anio[cnt]+"</p>"
+				   +"<p class=\"sintesis\">"+t.sintesis[cnt]+"</p>"
+				   +"<p class=\"dptal\">"+t.Dp[cnt]
+				   +"</p><p class=\"oriente\">"+t.Or[cnt]
+				   +"</p><p class=\"occidente\">"+t.Oc[cnt]
+				   +"</p><p class=\"aburra\">"+t.Ab[cnt]
+				   +"</p></div>");
 		    // Problemas con el width (Límite 6000px -> Pillar interactivos.marginalia)
 		});
 	    });
@@ -41,31 +60,27 @@ $.widget("ui.Control", {
 $.widget("ui.DialogBox",{
     _init: function() {
 	this._setDialog();
+//	console.log(this);
     },
     _setDialog: function(){
+	
 	var $el= this.element;
-	$el.dialog();
+	$el.bind('click',function(){
+	    var $dialog = $('<div></div>')
+		.html($(this).find("span").html())
+		.dialog({
+		    autoOpen: true,
+		});
+//	    console.log("clicked");
+ 	});	
+	
     }
 });
 
 $(function() {
     $(".timelines-list").Timeline();
     $(".span-control").Control();
-  
-    var $dialog = $('<div></div>')
-	.html('This dialog will show every time!')
-	.dialog({
-	    autoOpen: false,
-	    title: 'Basic Dialog'
-	});
-//No ha cargado todos los eventos 
-    $('.event').click(function() {
-	$dialog.dialog('open');
-	// prevent the default action, e.g., following a link
-	return false;
-    });
-    
-//    $(".event").DialogBox(); // No me carga todos los elementos con la clase event| Está cargando solo el primero
+    var t=setTimeout("$(\".event\").DialogBox()",3000);
 });
 
 //console.profileEnd();
